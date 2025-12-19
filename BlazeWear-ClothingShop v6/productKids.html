@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blaze Wear</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/kids.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+  <link rel="stylesheet" href="css/sizeChart.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="ClothingShop.html" class="brand">
+          <img src="https://i.postimg.cc/QthCGNqV/logo.png" alt="Blaze Wear logo"
+               class="logo-img" height="36" width="36">
+          <span class="logo-text">Blaze Wear</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <div class="nav-shell">
+          <nav class="nav nav-primary" aria-label="Main Sections">
+            <ul>
+              <li><a href="men.html">Мъже</a></li>
+              <li><a href="women.html">Жени</a></li>
+              <li><a href="kids.html">Деца</a></li>
+              <li><a href="ClothingShop.html">Начало</a></li>
+            </ul>
+          </nav>
+
+          <nav class="nav nav-secondary" aria-label="Category Navigation">
+            <ul>
+              <li><a href="shop.html">Нови</a></li>
+              <li class="has-dropdown has-mega">
+                <a href="#">Дрехи</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Горни</h4>
+                    <a href="#">Суитшърти</a>
+                    <a href="#">Якета</a>
+                    <a href="#">Блузки</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Долни</h4>
+                    <a href="#">Панталони</a>
+                    <a href="#">Анцузи</a>
+                    <a href="#">Клинчета</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Специални</h4>
+                    <a href="#">School Essentials</a>
+                    <a href="#">Mini Streetwear</a>
+                    <a href="#">Игри &amp; спорт</a>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown has-mega">
+                <a href="#">Обувки</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Маратонки</h4>
+                    <a href="#">Everyday</a>
+                    <a href="#">Спорт</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Боти</h4>
+                    <a href="#">Зима</a>
+                    <a href="#">Дъждовни</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Още</h4>
+                    <a href="#">Всички обувки</a>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown has-mega">
+                <a href="#">Аксесоари</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Шапки &amp; ръкавици</h4>
+                    <a href="#">Шапки</a>
+                    <a href="#">Ръкавици</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Раници</h4>
+                    <a href="#">Училище</a>
+                    <a href="#">Спорт</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Още</h4>
+                    <a href="#">Цялата колекция</a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#">Спорт</a></li>
+              <li><a href="#" class="nav-sale">Разпродажба</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn" aria-label="search">🔍</button>
+        <button class="icon-btn cart-btn" id="cartOpenBtn" aria-label="cart">
+          🛒
+          <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-main">
+    <div class="product-breadcrumbs">
+      <a href="ClothingShop.html" class="crumb-link">Начало</a>
+      <span class="crumb-sep">/</span>
+      <a href="kids.html" class="crumb-link">Деца</a>
+      <span class="crumb-sep">/</span>
+      <span id="backCrumb" class="crumb-link crumb-prev">Предишен продукт</span>
+    </div>
+
+    <div class="product-container">
+      <section class="product-gallery">
+        <div class="product-main-image">
+          <img id="productMainImage"
+               src="https://via.placeholder.com/700x900/1f1140/ffffff?text=Kids+Product"
+               alt="Blaze продукт" />
+        </div>
+
+        <div class="product-thumbs">
+          <button class="thumb is-active" data-img="https://via.placeholder.com/700x900/1f1140/ffffff?text=Kids+Product" aria-label="Основна снимка">
+            <img src="https://via.placeholder.com/90x120/1f1140/ffffff?text=A" alt="Основна снимка">
+          </button>
+          <button class="thumb" data-img="https://via.placeholder.com/700x900/0e0a1b/ffffff?text=Alt+View" aria-label="Алтернативен изглед">
+            <img src="https://via.placeholder.com/90x120/0e0a1b/ffffff?text=B" alt="Алтернативен изглед">
+          </button>
+        </div>
+      </section>
+
+      <section class="product-info-panel">
+        <p class="product-brand">MINI BLAZE</p>
+        <h1 class="product-title">Продукт</h1>
+
+        <div class="product-price-row">
+          <span class="product-price-current">0.00 лв</span>
+          <span class="product-price-old">0.00 лв</span>
+          <span class="product-discount">-0%</span>
+        </div>
+
+        <div class="product-option-block">
+          <span class="option-label">Размер</span>
+          <div class="size-options">
+            <button class="size-option is-active" data-size="XS">XS</button>
+            <button class="size-option" data-size="S">S</button>
+            <button class="size-option" data-size="M">M</button>
+            <button class="size-option" data-size="L">L</button>
+          </div>
+          <a href="#" class="size-chart-link">Таблица с размери</a>
+        </div>
+
+        <button id="productAddToCart" class="product-add-btn">Добави в количката</button>
+
+        <section class="product-details">
+          <h2>Детайли за продукта</h2>
+          <ul>
+            <li>Описание 1</li>
+            <li>Описание 2</li>
+            <li>Описание 3</li>
+          </ul>
+        </section>
+      </section>
+    </div>
+
+    <section class="product-reco">
+      <div class="product-reco-header">
+        <h2>Може да ви хареса</h2>
+      </div>
+      <div class="product-reco-grid"></div>
+    </section>
+  </main>
+
+  <aside id="cartPanel" class="shop-cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Вашата количка</h3>
+      <button id="cartClose" class="cart-close" aria-label="Затвори">×</button>
+    </div>
+    <div id="cartContents" class="cart-contents">
+      <p class="cart-empty">В момента количката е празна</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-sum">Общо: <strong id="cartTotal">0.00 лв</strong></div>
+      <button id="checkoutBtn" class="cart-checkout">Купи сега</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="logo-icon">🔥</span> <strong>BlazeWear</strong> — All rights reserved
+      </div>
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="ClothingShop.html">Начало</a> ·
+          <a href="about.html">Относно</a> ·
+          <a href="shop.html">Магазин</a>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <div class="contacts">
+          <div>contact@blazewear.example</div>
+          <div>+359 88 000 0000</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="paymentModal" class="payment-modal" aria-hidden="true">
+    <div class="payment-modal-backdrop" data-close="true"></div>
+
+    <div class="payment-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <button type="button" class="pm-close" aria-label="Затвори">×</button>
+      <h3 id="pmTitle">Плащане</h3>
+
+      <div id="pmSavedWrapper" class="pm-saved" style="display:none;">
+        <span id="pmSavedLabel"></span>
+        <button type="button" id="useSavedCardBtn" class="pm-btn-secondary pm-btn-small">Използвай тази карта</button>
+      </div>
+
+      <form id="paymentForm">
+        <label for="pmethod">Метод на плащане</label>
+        <select id="pmethod" name="pmethod">
+          <option value="">Избери метод…</option>
+          <option value="visa">Visa</option>
+          <option value="mastercard">Mastercard</option>
+          <option value="amex">American Express</option>
+        </select>
+
+        <label for="cardNumber">Номер на карта</label>
+        <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" />
+
+        <div class="pm-row">
+          <div class="pm-col small">
+            <label for="expMonth">Месец</label>
+            <select id="expMonth" name="expMonth">
+              <option value="">Месец</option>
+            </select>
+          </div>
+
+          <div class="pm-col small">
+            <label for="expYear">Година</label>
+            <select id="expYear" name="expYear">
+              <option value="">Година</option>
+            </select>
+          </div>
+
+          <div class="pm-col small">
+            <label for="cardCvc">CVC</label>
+            <input id="cardCvc" name="cardCvc" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="123" />
+          </div>
+        </div>
+
+        <div class="pm-actions">
+          <button type="submit" class="pm-btn-primary">Потвърди плащането</button>
+          <button id="saveCardBtn" class="pm-btn-secondary">Запази картата</button>
+        </div>
+
+        <div id="pmMessage" class="pm-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/productKids.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // активен линк "Деца"
+    document.querySelectorAll('.nav a').forEach(a => {
+      if (a.getAttribute('href') === 'kids.html') a.classList.add('active');
+    });
+
+    const backCrumb = document.getElementById('backCrumb');
+    if (backCrumb) backCrumb.addEventListener('click', () => window.history.back());
+
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id') || 'kids-1';
+
+    const kidsProducts = (window.BLAZE_PRODUCTS && window.BLAZE_PRODUCTS.kids) || {};
+    const productData = kidsProducts[productId];
+
+    const mainImg     = document.getElementById('productMainImage');
+    const titleEl     = document.querySelector('.product-title');
+    const brandEl     = document.querySelector('.product-brand');
+    const priceEl     = document.querySelector('.product-price-current');
+    const oldPriceEl  = document.querySelector('.product-price-old');
+    const discountEl  = document.querySelector('.product-discount');
+    const detailsList = document.querySelector('.product-details ul');
+
+    let currentSize = 'XS';
+
+    if (productData) {
+      if (mainImg) { mainImg.src = productData.mainImage; mainImg.alt = productData.name; }
+      if (titleEl) titleEl.textContent = productData.name;
+      if (brandEl && productData.brand) brandEl.textContent = productData.brand;
+
+      document.title = 'Blaze Wear – ' + productData.name;
+
+      const initialPrice = (productData.sizes && productData.sizes['XS']) || productData.price;
+      if (priceEl) priceEl.textContent = Number(initialPrice).toFixed(2) + ' лв';
+
+      if (productData.oldPrice && oldPriceEl && discountEl) {
+        oldPriceEl.style.display = 'inline';
+        discountEl.style.display = 'inline';
+        oldPriceEl.textContent = Number(productData.oldPrice).toFixed(2) + ' лв';
+        discountEl.textContent = productData.discount || '';
+      } else {
+        if (oldPriceEl) oldPriceEl.style.display = 'none';
+        if (discountEl) discountEl.style.display = 'none';
+      }
+
+      if (detailsList && Array.isArray(productData.details)) {
+        detailsList.innerHTML = '';
+        productData.details.forEach(d => {
+          const li = document.createElement('li');
+          li.textContent = d;
+          detailsList.appendChild(li);
+        });
+      }
+    } else {
+      console.warn('Няма дефиниран продукт за id =', productId);
+    }
+
+    const thumbs = document.querySelectorAll('.product-thumbs .thumb');
+    thumbs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        thumbs.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const img = btn.dataset.img || '';
+        if (mainImg && img) mainImg.src = img;
+      });
+    });
+
+    const sizeBtns = document.querySelectorAll('.size-option');
+    sizeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        currentSize = btn.dataset.size;
+
+        if (productData && productData.sizes && productData.sizes[currentSize]) {
+          const newPrice = productData.sizes[currentSize];
+          if (priceEl) priceEl.textContent = Number(newPrice).toFixed(2) + ' лв';
+        }
+      });
+    });
+
+    const addToCartBtn = document.getElementById('productAddToCart');
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener('click', () => {
+        if (!productData) return;
+
+        const priceForSize = (productData.sizes && productData.sizes[currentSize]) || productData.price;
+
+        const cartItem = {
+          id: productId + '-' + currentSize,
+          name: productData.name + ' (' + currentSize + ')',
+          price: priceForSize,
+          img: productData.mainImage,
+          qty: 1,
+          size: currentSize,
+          productId: productId,
+          category: productData.category || null
+        };
+
+        document.dispatchEvent(new CustomEvent('cart:add', { detail: cartItem }));
+
+        addToCartBtn.textContent = '✓ Добавено!';
+        setTimeout(() => addToCartBtn.textContent = 'Добави в количката', 2000);
+
+        updateCartBadge();
+      });
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById('cartBadge');
+      if (!badge) return;
+
+      const cartData = localStorage.getItem('cart');
+      let totalQty = 0;
+
+      if (cartData) {
+        try {
+          const cart = JSON.parse(cartData) || {};
+          Object.keys(cart).forEach(id => totalQty += Number(cart[id]?.qty) || 0);
+        } catch(e) { totalQty = 0; }
+      }
+
+      if (totalQty > 0) {
+        badge.textContent = totalQty;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.textContent = '0';
+        badge.style.display = 'none';
+      }
+    }
+    document.addEventListener('cart:updated', updateCartBadge);
+    updateCartBadge();
+
+    const cartOpenBtn = document.getElementById('cartOpenBtn');
+    const cartPanel   = document.getElementById('cartPanel');
+    const cartClose   = document.getElementById('cartClose');
+
+    if (cartOpenBtn && cartPanel) cartOpenBtn.addEventListener('click', () => cartPanel.setAttribute('aria-hidden', 'false'));
+    if (cartClose && cartPanel)   cartClose.addEventListener('click', () => cartPanel.setAttribute('aria-hidden', 'true'));
+
+    document.addEventListener('click', (e) => {
+      if (cartPanel && cartOpenBtn && !cartPanel.contains(e.target) && !cartOpenBtn.contains(e.target)) {
+        cartPanel.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    const recoGrid = document.querySelector('.product-reco-grid');
+    function renderRecommendations() {
+      if (!recoGrid || !productData) return;
+      recoGrid.innerHTML = '';
+
+      const entries = Object.entries(kidsProducts || {});
+      if (!entries.length) return;
+
+      const currentCat = productData.category || null;
+
+      let recos = entries.filter(([id, p]) => id !== productId && p.category === currentCat);
+      if (recos.length < 4) {
+        const extra = entries.filter(([id, p]) => id !== productId && p.category !== currentCat);
+        recos = recos.concat(extra);
+      }
+
+      recos.slice(0, 4).forEach(([id, p]) => {
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        const basePrice = p.price || (p.sizes && p.sizes.XS) || 0;
+
+        card.innerHTML = `
+          <a href="productKids.html?id=${id}" class="product-card-link">
+            <div class="product-card-thumb">
+              <img src="${p.mainImage}" alt="${p.name}">
+            </div>
+            <div class="product-card-info">
+              <h3>${p.name}</h3>
+              <span class="product-card-price">${Number(basePrice).toFixed(2)} лв</span>
+            </div>
+          </a>
+        `;
+        recoGrid.appendChild(card);
+      });
+    }
+    renderRecommendations();
+
+    const sizeChartLink   = document.querySelector('.size-chart-link');
+    const sizeModal       = document.getElementById('sizeModal');
+    const sizeModalBack   = sizeModal ? sizeModal.querySelector('.size-modal-backdrop') : null;
+    const sizeModalClose  = sizeModal ? sizeModal.querySelector('.size-modal-close') : null;
+
+    function openSizeModal() {
+      if (!sizeModal) return;
+      sizeModal.setAttribute('aria-hidden', 'false');
+
+      const clothesChart = document.getElementById('sizeChartClothes');
+      const shoesChart   = document.getElementById('sizeChartShoes');
+
+      if (clothesChart && shoesChart) {
+        clothesChart.classList.remove('active');
+        shoesChart.classList.remove('active');
+
+        const cat = (productData && (productData.category || '') || '').toLowerCase();
+        if (cat === 'shoes' || cat === 'обувки') shoesChart.classList.add('active');
+        else clothesChart.classList.add('active');
+      }
+    }
+    function closeSizeModal() {
+      if (!sizeModal) return;
+      sizeModal.setAttribute('aria-hidden', 'true');
+    }
+
+    if (sizeChartLink) sizeChartLink.addEventListener('click', (e) => { e.preventDefault(); openSizeModal(); });
+    if (sizeModalBack) sizeModalBack.addEventListener('click', closeSizeModal);
+    if (sizeModalClose) sizeModalClose.addEventListener('click', closeSizeModal);
+  });
+  </script>
+
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+
+      <div id="sizeChartShoes" class="size-chart">
+        <table>
+          <thead>
+            <tr>
+              <th>Дължина на стъпалото (см)</th>
+              <th>EU</th>
+              <th>US</th>
+              <th>UK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>15.2</td><td>25</td><td>8</td><td>7</td></tr>
+            <tr><td>16.0</td><td>26</td><td>9</td><td>8</td></tr>
+            <tr><td>16.7</td><td>27</td><td>10</td><td>9</td></tr>
+            <tr><td>17.3</td><td>28</td><td>11</td><td>10</td></tr>
+            <tr><td>18.0</td><td>29</td><td>12</td><td>11</td></tr>
+            <tr><td>18.7</td><td>30</td><td>13</td><td>12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

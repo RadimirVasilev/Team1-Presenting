@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blaze Wear</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/women.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body data-gender="women">
+
+  <!-- HEADER (копирай 1:1 от women.html) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="ClothingShop.html" class="brand">
+          <img src="https://i.postimg.cc/QthCGNqV/logo.png" alt="Blaze Wear logo" class="logo-img" height="36" width="36">
+          <span class="logo-text">Blaze Wear</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <div class="nav-shell">
+          <nav class="nav nav-primary" aria-label="Main Sections">
+            <ul>
+              <li><a href="men.html">Мъже</a></li>
+              <li><a href="women.html" class="active">Жени</a></li>
+              <li><a href="kids.html">Деца</a></li>
+              <li><a href="ClothingShop.html">Начало</a></li>
+            </ul>
+          </nav>
+
+          <nav class="nav nav-secondary" aria-label="Category Navigation">
+          <ul>
+              <li><a href="category-women.html?cat=new">Нови</a></li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=clothes">Дрехи</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Горни</h4>
+                   <a href="category-women.html?cat=tshirts">Тениски</a>
+                    <a href="category-women.html?cat=sweatshirts">Блузи & суитшърти</a>
+                    <a href="category-women.html?cat=shirts">Ризи</a>
+                    <a href="category-women.html?cat=jackets">Якета & палта</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Долни</h4>
+                    <a href="category-women.html?cat=jeans">Дънки</a>
+                    <a href="category-women.html?cat=pants">Панталони</a>
+                    <a href="category-women.html?cat=skirts">Поли</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Препоръчваме</h4>
+                     <a href="category-women.html?cat=bestsellers">Best sellers</a>
+                    <a href="category-women.html?cat=new">Нови колекции</a>
+                    <a href="category-women.html?cat=streetwear">Streetwear picks</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=shoes">Обувки</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Маратонки</h4>
+                    <a href="category-women.html?cat=lifestyleSneakers">Lifestyle</a>
+                    <a href="category-women.html?cat=runningSneakers">Running</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Боти &amp; ботуши</h4>
+                    <a href="category-women.html?cat=everydayBoots">Ежедневни</a>
+                    <a href="category-women.html?cat=treckingBoots">Трекинг</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Акценти</h4>
+                    <a href="category-women.html?cat=premiumShoes">Premium модели</a>
+                    <a href="category-women.html?cat=outdoorShoes">Outdoor</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=accessories">Аксесоари</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Street essentials</h4>
+                    <a href="category-women.html?cat=streetHat">Шапки</a>
+                    <a href="category-women.html?cat=streetBackpacks">Раници</a>
+                    <a href="streetBags">Чанти</a>
+                    <a href="category-women.html?cat=belts"></a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Зима</h4>
+                    <a href="category-women.html?cat=winterScarves">Шалове</a>
+                    <a href="category-women.html?cat=winterGloves">Ръкавици</a>
+                    <a href="category-women.html?cat=winterHatsAndHoods">Шапки &amp; качулки</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Още</h4>
+                    <a href="category-women.html?cat=allAccessories">Всички аксесоари</a>
+                  </div>
+                </div>
+              </li>
+
+              <li><a href="category-women.html?cat=sport">Спорт</a></li>
+              <li><a href="category-women.html?cat=sale" class="nav-sale">Разпродажба</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn cart-btn" id="cartOpenBtn" aria-label="cart">
+          🛒
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="women-main">
+
+    <!-- HERO може да остане същия или да го сменяш от JS -->
+    <section class="women-hero" id="winter-hero">
+      <div class="women-hero-inner">
+        <div class="women-hero-text">
+          <p class="women-hero-kicker" id="catKicker">КАТЕГОРИЯ</p>
+          <h1 id="catTitle">Жени</h1>
+          <p class="women-hero-sub" id="catSub">Избери категория от менюто.</p>
+          <a href="#cat-products" class="btn btn-primary women-hero-btn">Виж продуктите</a>
+        </div>
+        <div class="women-hero-image">
+          <div class="women-hero-placeholder">Категория продукти</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="women-section" id="cat-products">
+      <header class="women-section-header">
+        <h2 id="catSectionTitle">Продукти</h2>
+        <p id="catSectionDesc">Зареждане…</p>
+      </header>
+
+      <div class="women-products-grid" id="categoryGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- CART PANEL (копирай 1:1 от women.html) -->
+  <aside id="cartPanel" class="shop-cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Вашата количка</h3>
+      <button id="cartClose" class="cart-close" aria-label="Затвори">×</button>
+    </div>
+
+    <div id="cartContents" class="cart-contents">
+      <p class="cart-empty">В момента количката е празна</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-sum">Общо: <strong id="cartTotal">0.00 лв</strong></div>
+      <button id="checkoutBtn" class="cart-checkout">Купи сега</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="logo-icon">🔥</span> <strong>BlazeWear</strong> — All rights reserved
+      </div>
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="ClothingShop.html">Начало</a> ·
+          <a href="about.html">Относно</a> ·
+          <a href="shop.html">Магазин</a>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <div class="contacts">
+          <div>contact@blazewear.example</div>
+          <div>+359 88 000 0000</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/category.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

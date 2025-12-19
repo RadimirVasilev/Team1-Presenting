@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blaze Wear</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/women.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+
+  <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Лого вляво -->
+      <div class="header-left">
+        <a href="ClothingShop.html" class="brand">
+          <img src="https://i.postimg.cc/QthCGNqV/logo.png" alt="Blaze Wear logo" class="logo-img" height="36" width="36">
+          <span class="logo-text">Blaze Wear</span>
+        </a>
+      </div>
+
+      <!-- Двуредово меню в центъра -->
+      <div class="header-center">
+        <div class="nav-shell">
+          <!-- Горен ред -->
+          <nav class="nav nav-primary" aria-label="Main Sections">
+            <ul>
+              <li><a href="men.html">Мъже</a></li>
+              <li><a href="women.html" class="active">Жени</a></li>
+              <li><a href="kids.html">Деца</a></li>
+              <li><a href="ClothingShop.html">Начало</a></li>
+            </ul>
+          </nav>
+
+          <!-- Долен ред: категории -->
+          <nav class="nav nav-secondary" aria-label="Category Navigation">
+            <ul>
+              <li><a href="category-women.html?cat=new">Нови</a></li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=clothes">Дрехи</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Горни</h4>
+                   <a href="category-women.html?cat=tshirts">Тениски</a>
+                    <a href="category-women.html?cat=sweatshirts">Блузи & суитшърти</a>
+                    <a href="category-women.html?cat=shirts">Ризи</a>
+                    <a href="category-women.html?cat=jackets">Якета & палта</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Долни</h4>
+                    <a href="category-women.html?cat=jeans">Дънки</a>
+                    <a href="category-women.html?cat=pants">Панталони</a>
+                    <a href="category-women.html?cat=skirts">Поли</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Препоръчваме</h4>
+                     <a href="category-women.html?cat=bestsellers">Best sellers</a>
+                    <a href="category-women.html?cat=new">Нови колекции</a>
+                    <a href="category-women.html?cat=streetwear">Streetwear picks</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=shoes">Обувки</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Маратонки</h4>
+                    <a href="category-women.html?cat=lifestyleSneakers">Lifestyle</a>
+                    <a href="category-women.html?cat=runningSneakers">Running</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Боти &amp; ботуши</h4>
+                    <a href="category-women.html?cat=everydayBoots">Ежедневни</a>
+                    <a href="category-women.html?cat=treckingBoots">Трекинг</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Акценти</h4>
+                    <a href="category-women.html?cat=premiumShoes">Premium модели</a>
+                    <a href="category-women.html?cat=outdoorShoes">Outdoor</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-women.html?cat=accessories">Аксесоари</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Street essentials</h4>
+                    <a href="category-women.html?cat=streetHat">Шапки</a>
+                    <a href="category-women.html?cat=streetBackpacks">Раници</a>
+                    <a href="streetBags">Чанти</a>
+                    <a href="category-women.html?cat=belts"></a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Зима</h4>
+                    <a href="category-women.html?cat=winterScarves">Шалове</a>
+                    <a href="category-women.html?cat=winterGloves">Ръкавици</a>
+                    <a href="category-women.html?cat=winterHatsAndHoods">Шапки &amp; качулки</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Още</h4>
+                    <a href="category-women.html?cat=allAccessories">Всички аксесоари</a>
+                  </div>
+                </div>
+              </li>
+
+              <li><a href="category-women.html?cat=sport">Спорт</a></li>
+              <li><a href="category-women.html?cat=sale" class="nav-sale">Разпродажба</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Икони вдясно -->
+      <div class="header-right">
+        <button class="icon-btn" aria-label="search">🔍</button>
+       <button class="icon-btn cart-btn" id="cartOpenBtn" aria-label="cart">
+  🛒
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT – зимна колекция за НЕЯ -->
+  <main class="women-main">
+
+    <!-- HERO: зимна промоция -->
+    <section class="women-hero" id="winter-hero">
+      <div class="women-hero-inner">
+        <div class="women-hero-text">
+          <p class="women-hero-kicker">WINTER SALE • ДО -50%</p>
+          <h1>Зимна колекция за нея</h1>
+          <p class="women-hero-sub">
+            Топли палта, плетива и обувки за всеки ден. Огнени детайли, меки силуети.
+          </p>
+          <a href="#new-season" class="btn btn-primary women-hero-btn">Виж колекцията</a>
+        </div>
+        <div class="women-hero-image">
+          <div class="women-hero-placeholder">
+            Тук постави голяма снимка за кампанията
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Лента с марки (анимация) -->
+    <section class="women-brands" aria-label="Марки">
+      <div class="women-brands-track">
+        <span>EMBER</span>
+        <span>STREET GLOW</span>
+        <span>URBAN FLAME</span>
+        <span>WINTER EMBER</span>
+        <span>NEON FROST</span>
+        <span>EMBER</span>
+        <span>STREET GLOW</span>
+        <span>URBAN FLAME</span>
+        <span>WINTER EMBER</span>
+        <span>NEON FROST</span>
+      </div>
+    </section>
+
+    <!-- Първи блок – 9 продукта -->
+    <section class="women-section" id="new-season" aria-label="Ново за сезона">
+      <header class="women-section-header">
+        <h2>Ново за сезона</h2>
+        <p>Подбрани предложения за първи огнени впечатления.</p>
+      </header>
+
+      <div class="women-products-grid">
+        <!-- 1 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-1" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816179/product-02c36cc98e_puhwhv.jpg" alt="Плисирана пола Glow">
+          </a>
+          <div class="women-product-meta">
+            <h3>Рокля Glow</h3>
+            <div class="women-product-price">79.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-2" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-05a9d53851_vkextn.jpg"
+                 alt="Червен панталон Night">
+          </a>
+          <div class="women-product-meta">
+            <h3>Червен панталон</h3>
+            <div class="women-product-price">99.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-3" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-4e72026749_pfm95l.jpg"
+                 alt="Oversize суитшърт Blaze">
+          </a>
+          <div class="women-product-meta">
+            <h3>Червена рокля</h3>
+            <div class="women-product-price">69.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-4" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/117CY-99X-011-1-893316-4_qhuup0.avif" alt="Кожени боти Ember Check">
+          </a>
+          <div class="women-product-meta">
+            <h3>Кожени боти</h3>
+            <div class="women-product-price">149.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-5" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-4fb049e617_ljiig5.jpg" alt="Вълнено палто Frost">
+          </a>
+          <div class="women-product-meta">
+            <h3>Тъмно червено горнище</h3>
+            <div class="women-product-price">199.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="women-product-card">
+         <a href="productWoman.html?id=women-6" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-e92844360c_qmjj2n.jpg"
+                 alt="Плетен пуловер Ember">
+          </a>
+          <div class="women-product-meta">
+            <h3>Червено-розови къси гащи</h3>
+            <div class="women-product-price">89.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-7" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-05a9d53851_vkextn.jpg"
+                 alt="Рипсен топ Street Glow">
+          </a>
+          <div class="women-product-meta">
+            <h3>Червен анцунг</h3>
+            <div class="women-product-price">49.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-8" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/product-b8a378035c-box_h9ciof.jpg"
+                 alt="Кожена пола Urban Flame">
+          </a>
+          <div class="women-product-meta">
+            <h3>Червена блуза</h3>
+            <div class="women-product-price">119.99 лв</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Втори блок – още 9 продукта под първите -->
+    <section class="women-section" aria-label="Палта и якета">
+      <header class="women-section-header">
+        <h2>Палта & Якета</h2>
+        <p>Слоеве топлина с огнени детайли.</p>
+      </header>
+      <section class="women-section" id="new-season" aria-label="Ново за сезона">
+
+      <div class="women-products-grid">
+        <!-- 1 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-9" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816183/508310015_y258ea.jpg" alt="Зимно Яке Heather">
+          </a>
+          <div class="women-product-meta">
+            <h3>Зимно яке Heather</h3>
+            <div class="women-product-price">89.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-10" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816185/zimno-ake-81292-340-zeleno-2_vju093.jpg"
+                 alt="Зимно яке Marine">
+          </a>
+          <div class="women-product-meta">
+            <h3>Вълнено палто Green</h3>
+            <div class="women-product-price">199.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-11" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816184/damsko-tedi-palto-vero-moda_m6i9ku.webp"
+                 alt="Oversize суитшърт Blaze">
+          </a>
+          <div class="women-product-meta">
+            <h3>Вълнено палто Grey</h3>
+            <div class="women-product-price">169.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-12" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816183/damsko-balo-valneno-palto-599a171161-meilleur-moment-68ada275b3c89_fqwwqc.webp" alt="Кожени боти Ember Check">
+          </a>
+          <div class="women-product-meta">
+            <h3>Палто Polar Fox</h3>
+            <div class="women-product-price">179.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-13" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816184/PRODUCT-625-0453-225-1-size-product-list-new-v-2-compressed_o4oyg9.jpg" alt="Вълнено палто Frost">
+          </a>
+          <div class="women-product-meta">
+            <h3>Зимно яке Frost</h3>
+            <div class="women-product-price">149.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="women-product-card">
+         <a href="productWoman.html?id=women-14" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816184/PRODUCT-625-0459-89-1-size-product-list-new-v-2-compressed_mnymvq.jpg"
+                 alt="Плетен пуловер Ember">
+          </a>
+          <div class="women-product-meta">
+            <h3>Зимно яке Black</h3>
+            <div class="women-product-price">89.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-15" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816185/zimno-bejovo-dalgo-damsko-qke_pnekds.jpg"
+                 alt="Рипсен топ Street Glow">
+          </a>
+          <div class="women-product-meta">
+            <h3>Зимно яке(топ) White Wolf</h3>
+            <div class="women-product-price">119.99 лв</div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="women-product-card">
+          <a href="productWoman.html?id=women-16" class="women-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816185/_%D0%B7%D0%B8%D0%BC%D0%BD%D0%BE_%D1%8F%D0%BA%D0%B5_DK106-64_%D0%B1%D1%8F%D0%BB%D0%BE-2_em1ciz.jpg"
+                 alt="Кожена пола Urban Flame">
+          </a>
+          <div class="women-product-meta">
+            <h3>Зимно палто Polar</h3>
+            <div class="women-product-price">79.99 лв</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT – зимна колекция за НЕЯ -->
+
+  <!-- CART PANEL -->
+  <aside id="cartPanel" class="shop-cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Вашата количка</h3>
+      <button id="cartClose" class="cart-close" aria-label="Затвори">×</button>
+    </div>
+
+    <div id="cartContents" class="cart-contents">
+      <p class="cart-empty">В момента количката е празна</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-sum">Общо: <strong id="cartTotal">0.00 лв</strong></div>
+      <button id="checkoutBtn" class="cart-checkout">Купи сега</button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="logo-icon">🔥</span> <strong>BlazeWear</strong> — All rights reserved
+      </div>
+
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="ClothingShop.html">Начало</a> ·
+          <a href="about.html">Относно</a> ·
+          <a href="shop.html">Магазин</a>
+        </nav>
+      </div>
+
+      <div class="footer-right">
+        <div class="contacts">
+          <div>contact@blazewear.example</div>
+          <div>+359 88 000 0000</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Активен линк в навигацията -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.nav a').forEach(a => {
+        if (location.pathname.endsWith('women.html') && a.getAttribute('href') === 'women.html') {
+          a.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- Общи скриптове -->
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

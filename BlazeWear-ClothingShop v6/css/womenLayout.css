@@ -1,0 +1,252 @@
+/* women.css — женска категория, зимна огнена тема */
+
+/* Цветове за женската страница */
+:root{
+  --bg-dark-1: #2a001f; /* deep plum */
+  --bg-dark-2: #5b0936; /* rich magenta */
+  --fire-1:   #ff4f8a;  /* hot pink / огнено розово */
+  --fire-2:   #ff7aa8;
+  --fire-3:   #ffe0f0;
+  --muted:    #f5c9de;
+}
+
+/* фонът остава анимиран, но в плум нюанс */
+body{
+  background: linear-gradient(120deg, var(--bg-dark-1), var(--bg-dark-2) 45%, #120621 80%, var(--fire-1));
+  background-size: 300% 300%;
+  animation: bgShift 14s ease-in-out infinite;
+}
+
+/* малко допълнителен падинг за основното съдържание (използва се .content от global) */
+.content{
+  padding-bottom: 80px;
+}
+
+/* ========================
+   HERO: Зимна колекция
+   ======================== */
+
+.women-hero{
+  margin-bottom: 28px;
+}
+
+.women-hero-inner{
+  position: relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(0,1.2fr);
+  gap:26px;
+  align-items:stretch;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,79,138,0.24), transparent 55%),
+    linear-gradient(135deg, rgba(5,0,10,0.96), rgba(5,0,18,0.9));
+  border-radius:22px;
+  padding:26px 30px;
+  box-shadow:0 26px 60px rgba(0,0,0,0.75);
+  border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden;
+}
+
+.women-hero-left{
+  position:relative;
+  z-index:1;
+}
+
+.women-hero-kicker{
+  font-size:12px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+  color:var(--fire-3);
+  font-weight:800;
+}
+
+.women-hero-title{
+  margin:0 0 10px 0;
+  font-size:30px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+
+.women-hero-text{
+  margin:0 0 18px 0;
+  color:var(--muted);
+  font-size:14px;
+  max-width:380px;
+}
+
+.women-hero-right{
+  position:relative;
+  z-index:1;
+}
+
+.women-hero-img{
+  height:220px;
+  border-radius:18px;
+}
+
+/* снежен ефект върху банера */
+.snow-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(2px 2px at 30% 0%,   rgba(255,255,255,0.9),  transparent),
+    radial-gradient(3px 3px at 70% 20%,  rgba(255,255,255,0.85), transparent),
+    radial-gradient(2px 2px at 90% 0%,   rgba(255,255,255,0.9),  transparent),
+    radial-gradient(2px 2px at 0% 50%,   rgba(255,255,255,0.7),  transparent),
+    radial-gradient(3px 3px at 80% 60%,  rgba(255,255,255,0.9),  transparent);
+  background-size:200px 200px;
+  animation:snowFall 18s linear infinite;
+  opacity:0.85;
+}
+
+@keyframes snowFall{
+  0%   { background-position:0 -200px; }
+  100% { background-position:0 200px; }
+}
+
+/* ========================
+   Лента с „марки“
+   ======================== */
+
+.women-brands{
+  margin: 10px auto 32px auto;
+  max-width: var(--container-max);
+  overflow:hidden;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(90deg,rgba(0,0,0,0.7),rgba(0,0,0,0.75));
+}
+
+.brands-track{
+  display:inline-flex;
+  gap:40px;
+  padding:10px 30px;
+  white-space:nowrap;
+  animation: brandsScroll 18s linear infinite;
+}
+
+.brands-track span{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  color:var(--fire-3);
+  opacity:0.9;
+}
+
+@keyframes brandsScroll{
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
+/* ========================
+   Продуктови секции
+   ======================== */
+
+.women-products-section{
+  margin-bottom:56px;
+}
+
+.women-section-header{
+  margin-bottom:18px;
+}
+
+.women-section-header h2{
+  margin:0 0 4px 0;
+  font-size:22px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+}
+
+.women-section-header p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* GRID по цялата ширина (вътре в .content) */
+.women-product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:22px;
+}
+
+/* карта на продукт — използва .product за съвместимост със структурата */
+.women-product-grid .product{
+  background: linear-gradient(180deg, rgba(0,0,0,0.82), rgba(0,0,0,0.6));
+  border-radius:18px;
+  padding:12px 14px 14px;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 18px 40px rgba(0,0,0,0.7);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+/* линкът около снимката (ЩЕ го добавиш в HTML) */
+.product-photo-link{
+  display:block;
+  border-radius:14px;
+  overflow:hidden;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.product-photo{
+  height:260px;
+  border-radius:14px;
+  border:2px dashed rgba(255,255,255,0.08);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,79,138,0.26), transparent 60%),
+    rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:12px;
+}
+
+/* име + цена */
+.product-name{
+  margin:2px 0 4px 0;
+  font-size:15px;
+  font-weight:700;
+}
+
+.price{
+  font-weight:800;
+  color:var(--fire-1);
+  margin:0 0 4px 0;
+}
+
+/* Скриваме бутона "Добави" на тази страница */
+.women-product-grid .add-to-cart{
+  display:none !important;
+}
+
+/* ========================
+   Responsive
+   ======================== */
+
+@media (max-width:980px){
+  .women-hero-inner{
+    grid-template-columns:minmax(0,1fr);
+  }
+  .women-hero-img{
+    height:200px;
+  }
+}
+
+@media (max-width:520px){
+  .women-product-grid{
+    grid-template-columns:1fr;
+  }
+  .women-hero-inner{
+    padding:20px 18px;
+  }
+  .product-photo{
+    height:220px;
+  }
+}

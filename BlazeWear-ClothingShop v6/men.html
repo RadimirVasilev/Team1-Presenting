@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blaze Wear</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/men.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="ClothingShop.html" class="brand">
+          <img src="https://i.postimg.cc/QthCGNqV/logo.png" alt="Blaze Wear logo" class="logo-img" height="36" width="36">
+          <span class="logo-text">Blaze Wear</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <div class="nav-shell">
+          <nav class="nav nav-primary" aria-label="Main Sections">
+            <ul>
+              <li><a href="men.html" class="active">Мъже</a></li>
+              <li><a href="women.html">Жени</a></li>
+              <li><a href="kids.html">Деца</a></li>
+              <li><a href="ClothingShop.html">Начало</a></li>
+            </ul>
+          </nav>
+
+          <nav class="nav nav-secondary" aria-label="Category Navigation">
+            <ul>
+              <li><a href="category-men.html?cat=new">Нови</a></li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-men.html?cat=clothes">Дрехи</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Горни</h4>
+                   <a href="category-men.html?cat=tshirts">Тениски</a>
+                    <a href="category-men.html?cat=sweatshirts">Блузи & суитшърти</a>
+                    <a href="category-men.html?cat=shirts">Ризи</a>
+                    <a href="category-men.html?cat=jackets">Якета & палта</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Долни</h4>
+                    <a href="category-men.html?cat=jeans">Дънки</a>
+                    <a href="category-men.html?cat=pants">Панталони</a>
+                    <a href="category-men.html?cat=skirts">Поли</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Препоръчваме</h4>
+                     <a href="category-men.html?cat=bestsellers">Best sellers</a>
+                    <a href="category-men.html?cat=new">Нови колекции</a>
+                    <a href="category-men.html?cat=streetwear">Streetwear picks</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-men.html?cat=shoes">Обувки</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Маратонки</h4>
+                    <a href="category-men.html?cat=lifestyleSneakers">Lifestyle</a>
+                    <a href="category-men.html?cat=runningSneakers">Running</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Боти &amp; ботуши</h4>
+                    <a href="category-men.html?cat=everydayBoots">Ежедневни</a>
+                    <a href="category-men.html?cat=treckingBoots">Трекинг</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Акценти</h4>
+                    <a href="category-men.html?cat=premiumShoes">Premium модели</a>
+                    <a href="category-men.html?cat=outdoorShoes">Outdoor</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="has-dropdown has-mega">
+                <a href="category-men.html?cat=accessories">Аксесоари</a>
+                <div class="mega-menu">
+                  <div class="mega-col">
+                    <h4>Street essentials</h4>
+                    <a href="category-men.html?cat=streetHat">Шапки</a>
+                    <a href="category-men.html?cat=streetBackpacks">Раници</a>
+                    <a href="category-men.html?cat=belts"></a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Зима</h4>
+                    <a href="category-men.html?cat=winterScarves">Шалове</a>
+                    <a href="category-men.html?cat=winterGloves">Ръкавици</a>
+                    <a href="category-men.html?cat=winterHatsAndHoods">Шапки &amp; качулки</a>
+                  </div>
+                  <div class="mega-col">
+                    <h4>Още</h4>
+                    <a href="category-men.html?cat=allAccessories">Всички аксесоари</a>
+                  </div>
+                </div>
+              </li>
+
+              <li><a href="category-men.html?cat=sport">Спорт</a></li>
+              <li><a href="category-men.html?cat=sale" class="nav-sale">Разпродажба</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn" aria-label="search">🔍</button>
+       <button class="icon-btn cart-btn" id="cartOpenBtn" aria-label="cart">
+  🛒
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+
+
+      </div>
+    </div>
+  </header>
+
+  <main class="men-main">
+
+    <section class="men-hero" id="winter-hero-men">
+      <div class="men-hero-inner">
+        <div class="men-hero-text">
+          <p class="men-hero-kicker">WINTER DROP • ДО -40%</p>
+          <h1>Зимна колекция за него</h1>
+          <p class="men-hero-sub">
+            Топли якета, технически суитшърти и деним, създадени за градски студ и нощни приключения.
+          </p>
+          <a href="#men-new-season" class="btn btn-primary men-hero-btn">Разгледай колекцията</a>
+        </div>
+        <div class="men-hero-image">
+          <div class="men-hero-placeholder">Тук постави голяма снимка за мъжката кампания</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="men-brands" aria-label="Марки">
+      <div class="men-brands-track">
+        <span>BLAZE STUDIO</span><span>URBAN FLARE</span><span>CITY ARMOR</span><span>NIGHT SHIFT</span><span>STREET CODE</span>
+        <span>BLAZE STUDIO</span><span>URBAN FLARE</span><span>CITY ARMOR</span><span>NIGHT SHIFT</span><span>STREET CODE</span>
+      </div>
+    </section>
+
+    <!-- НОВО ЗА СЕЗОНА -->
+    <section class="men-section" id="men-new-season" aria-label="Ново за сезона">
+      <header class="men-section-header">
+        <h2>Ново за сезона</h2>
+        <p>Подбрани якета, суитшърти и деним за зимни градски мисии.</p>
+      </header>
+
+      <div class="men-products-grid">
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-1" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/scott-jacket-tech-parka-parka_tf26xi.jpg" alt="Tech парка Frostline">
+          </a>
+          <div class="men-product-meta">
+            <h3>Tech парка Frostline</h3>
+            <div class="men-product-price">219.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-2" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/Omnitau-Nov22-0858_ea9y9z.webp" alt="Oversize суитшърт Night Grid">
+          </a>
+          <div class="men-product-meta">
+            <h3>Oversize суитшърт Night Grid</h3>
+            <div class="men-product-price">89.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-3" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/pantalon-camouflage-homme-couleur-boutique-militaire_ltrwa9.jpg" alt="Denim Blaze Indigo">
+          </a>
+          <div class="men-product-meta">
+            <h3>Denim Blaze Indigo</h3>
+            <div class="men-product-price">119.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-4" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/suicar-s-kaculka-la-sportiva-aequilibrium-thermal-hoody-m-storm-bluepoppy-65f7f2e365835-1920x1920_otfvex.jpg" alt="Термален суичър Polar Code">
+          </a>
+          <div class="men-product-meta">
+            <h3>Термален суичър Polar Code</h3>
+            <div class="men-product-price">99.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-5" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/d8b2bd48aa2a464fe40740ee3a8c4a6932c1d08f_vielir.jpg" alt="Пухено яке Street Shield">
+          </a>
+          <div class="men-product-meta">
+            <h3>Пухено яке Street Shield</h3>
+            <div class="men-product-price">249.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-6" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/12648-1623850245-2000h_yf4xhn.jpg" alt="Карго панталон Ember Core">
+          </a>
+          <div class="men-product-meta">
+            <h3>Карго панталон Ember Core</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-7" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816180/2b71ff6bb6f4121109516ced979f9506_gwichd.jpg" alt="Черна блуза Flame">
+          </a>
+          <div class="men-product-meta">
+            <h3>Черна блуза Flame</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-8" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816181/81082a_cu9uet.jpg" alt="Кожени обувки Void">
+          </a>
+          <div class="men-product-meta">
+            <h3>Кожени обувки Void</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ЯКЕТА И ПАЛТА -->
+    <section class="men-section" aria-label="Якета и палта">
+      <header class="men-section-header">
+        <h2>Якета & Палта</h2>
+        <p>Слоеве топлина и защита с минималистичен градски силует.</p>
+      </header>
+
+      <div class="men-products-grid">
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-9" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816187/PSG-WORK-JACKET-ZERO-FLAME-AND-ACID-RESISTANT-FRONT_kbp6x5.jpg" alt="Зимно яке Black">
+          </a>
+          <div class="men-product-meta">
+            <h3>Зимно яке Black</h3>
+            <div class="men-product-price">89.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-10" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816185/30868-1_dcuorg.webp" alt="Палто Vintage">
+          </a>
+          <div class="men-product-meta">
+            <h3>Палто Vintage</h3>
+            <div class="men-product-price">119.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-11" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816185/3450-s-kafav-puh-1_lirvr7.jpg" alt="Кожено яке Leather">
+          </a>
+          <div class="men-product-meta">
+            <h3>Кожено яке Leather</h3>
+            <div class="men-product-price">119.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-12" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816186/Minkov-Studio-21-01-2022-rockeds-122-copy_kukest.jpg" alt="Зимен кожух Slavic">
+          </a>
+          <div class="men-product-meta">
+            <h3>Зимен кожух Slavic</h3>
+            <div class="men-product-price">129.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-13" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816186/helly-hansen-yake-zimno-active-puffy-jacket-mazhki-zimni-yaketa-cheren-53523990_rrlyas.webp" alt="Пухено яке Puh">
+          </a>
+          <div class="men-product-meta">
+            <h3>Пухено яке Puh</h3>
+            <div class="men-product-price">249.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-14" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816186/cc0178412a8e91d77e0c8c3f65a0418d_rcyrqj.jpg" alt="Зимно яке Frost">
+          </a>
+          <div class="men-product-meta">
+            <h3>Зимно яке Frost</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-15" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816186/dsc-5885_vqclzi.webp" alt="Пухено яке Puhi">
+          </a>
+          <div class="men-product-meta">
+            <h3>Пухено яке Puhi</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+        <article class="men-product-card">
+          <a href="productMen.html?id=men-16" class="men-product-thumb">
+            <img src="https://res.cloudinary.com/dtsnuyx88/image/upload/v1765816187/Montane-Anti-Freeze-Hoodie-flame-orang-5056237087289f-f8f7_vd4odf.avif" alt="Зимно яке Flames">
+          </a>
+          <div class="men-product-meta">
+            <h3>Зимно яке Flames</h3>
+            <div class="men-product-price">109.99 лв</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <aside id="cartPanel" class="shop-cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Вашата количка</h3>
+      <button id="cartClose" class="cart-close" aria-label="Затвори">×</button>
+    </div>
+
+    <div id="cartContents" class="cart-contents">
+      <p class="cart-empty">В момента количката е празна</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-sum">Общо: <strong id="cartTotal">0.00 лв</strong></div>
+      <button id="checkoutBtn" class="cart-checkout">Купи сега</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="logo-icon">🔥</span> <strong>BlazeWear</strong> — All rights reserved
+      </div>
+      <div class="footer-center">
+        <nav class="footer-nav">
+          <a href="ClothingShop.html">Начало</a> ·
+          <a href="about.html">Относно</a> ·
+          <a href="shop.html">Магазин</a>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <div class="contacts">
+          <div>contact@blazewear.example</div>
+          <div>+359 88 000 0000</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

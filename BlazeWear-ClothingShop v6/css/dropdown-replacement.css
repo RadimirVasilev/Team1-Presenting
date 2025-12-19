@@ -1,0 +1,41 @@
+
+/* REPLACE the existing dropdown block in css/global.css with the following block
+   (this block matches the visual style you provided, while keeping existing color variables) */
+
+.has-dropdown { position: relative; }
+.has-dropdown > .dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  z-index: 1200;
+  pointer-events: none;
+  transition: all .26s ease;
+}
+.has-dropdown:hover > .dropdown,
+.has-dropdown:focus-within > .dropdown {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.has-dropdown > .dropdown li { list-style: none; }
+.has-dropdown > .dropdown li a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* remove default text-decoration on parent links to avoid double underline */
+.has-dropdown > a,
+.has-dropdown > a:hover,
+.has-dropdown > a:focus {
+  text-decoration: none !important;
+}

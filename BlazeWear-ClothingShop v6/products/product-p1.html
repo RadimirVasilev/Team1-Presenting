@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Класическа Тениска — Blaze Wear</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/women.css">
+  <link rel="stylesheet" href="css/womenLayout.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner container">
+    <div class="header-left">
+      <a href="ClothingShop.html" class="brand">
+        <img src="https://i.postimg.cc/QthCGNqV/logo.png" alt="Blaze Wear logo" class="logo-img">
+        <span class="logo-text">Blaze Wear</span>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="nav" role="navigation">
+        <ul>
+          <li><a href="ClothingShop.html">Начало</a></li>
+          <li class="has-dropdown">
+            <a href="men.html">Мъже ▾</a>
+          </li>
+          <li class="has-dropdown">
+            <a href="women.html" class="active">Жени ▾</a>
+          </li>
+          <li class="has-dropdown">
+            <a href="kids.html">Деца ▾</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <button class="icon-btn" aria-label="search">🔍</button>
+      <button class="icon-btn" aria-label="cart">🛒</button>
+    </div>
+  </div>
+</header>
+
+<aside class="side-menu" aria-label="Категории">
+  <h3>Категории</h3>
+  <ul>
+    <li><a href="#">Тениски</a></li>
+    <li><a href="#">Панталони</a></li>
+    <li><a href="#">Якета</a></li>
+    <li><a href="#">Блузи</a></li>
+    <li><a href="#">Аксесоари</a></li>
+  </ul>
+</aside>
+
+<main class="content">
+  <section class="product-detail-section">
+    <article class="product product-detail"
+             data-id="p1"
+             data-name="Класическа Тениска"
+             data-price-base="59.99"
+             data-price="59.99"
+             data-img="">
+      <div class="detail-layout">
+        <div class="detail-left">
+          <div class="placeholder detail-image">
+            Тук постави снимка на тениската
+          </div>
+        </div>
+
+        <div class="detail-right">
+          <button type="button" class="detail-back" onclick="history.back()">← Назад към продуктите</button>
+          <h1 class="detail-title">Класическа Тениска</h1>
+          <p class="detail-sub">100% памук, удобна и стилна за всеки ден.</p>
+
+          <div class="detail-price-row">
+            <span>Цена:</span>
+            <span class="detail-price-value">59.99</span> лв
+          </div>
+
+          <!-- Размери -->
+          <div class="detail-block">
+            <h3>Размер</h3>
+            <div class="detail-sizes">
+              <button type="button" class="size-btn active" data-mod="0">S</button>
+              <button type="button" class="size-btn" data-mod="5">M</button>
+              <button type="button" class="size-btn" data-mod="10">L</button>
+            </div>
+          </div>
+
+          <!-- Цветове (засега само визуално) -->
+          <div class="detail-block">
+            <h3>Цвят</h3>
+            <div class="detail-colors">
+              <button type="button" class="color-btn active" data-color="Черен">Черен</button>
+              <button type="button" class="color-btn" data-color="Бял">Бял</button>
+              <button type="button" class="color-btn" data-color="Син">Син</button>
+            </div>
+          </div>
+
+          <div class="detail-actions">
+            <button class="add-to-cart detail-add-btn">Добави в количката</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- „Може да ви хареса“ – просто примерни продукти -->
+  <section class="detail-related">
+    <h2>Може да ви хареса</h2>
+    <div class="product-grid">
+      <article class="product" data-id="p2" data-name="Елегантна Рокля" data-price="89.99">
+        <a href="product-p2.html" class="product-link">
+          <div class="placeholder product-image">
+            Елегантна рокля
+          </div>
+        </a>
+        <div class="price">Цена: 89.99 лв</div>
+      </article>
+
+      <article class="product" data-id="p3" data-name="Спортен Суитшърт" data-price="69.99">
+        <a href="product-p3.html" class="product-link">
+          <div class="placeholder product-image">
+            Спортен суитшърт
+          </div>
+        </a>
+        <div class="price">Цена: 69.99 лв</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- КОЛИЧКА (същата както в women.html) -->
+<aside id="cartPanel" class="shop-cart-panel" aria-hidden="true">
+  <div class="cart-header">
+    <h3>Вашата количка</h3>
+    <button id="cartClose" class="cart-close" aria-label="Затвори">×</button>
+  </div>
+
+  <div id="cartContents" class="cart-contents">
+    <p class="cart-empty">В момента количката е празна</p>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-sum">Общо: <strong id="cartTotal">0.00 лв</strong></div>
+    <button id="checkoutBtn" class="cart-checkout">Купи сега</button>
+  </div>
+</aside>
+
+<!-- PAYMENT MODAL – същият markup както в women.html -->
+<div id="paymentModal" class="payment-modal" aria-hidden="true" role="dialog" aria-label="Плащане">
+  <div class="payment-modal-backdrop" data-close="true"></div>
+
+  <div class="payment-modal-panel" role="document" aria-modal="true">
+    <button class="pm-close" aria-label="Затвори">&times;</button>
+    <h3>Плащане</h3>
+
+    <form id="paymentForm" novalidate>
+      <label for="pmethod">Начин за плащане</label>
+      <select id="pmethod" required>
+        <option value="">— Избери —</option>
+        <option value="visa">Visa</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="amex">American Express</option>
+      </select>
+
+      <label for="cardNumber">Номер на карта</label>
+      <input id="cardNumber" type="text" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="cc-number" required>
+
+      <div class="pm-row">
+        <div class="pm-col">
+          <label for="cardExp">Валидност (MM/YY)</label>
+          <input id="cardExp" type="text" placeholder="MM/YY" maxlength="5" required autocomplete="cc-exp">
+        </div>
+        <div class="pm-col small">
+          <label for="cardCvc">CVC</label>
+          <input id="cardCvc" type="text" inputmode="numeric" maxlength="4" placeholder="123" required autocomplete="cc-csc">
+        </div>
+      </div>
+
+      <div class="pm-actions">
+        <button type="button" id="saveCardBtn" class="pm-btn-secondary">Запази карта</button>
+        <button type="submit" id="confirmPaymentBtn" class="pm-btn-primary">Потвърждаване</button>
+      </div>
+
+      <div id="pmMessage" class="pm-message" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <span class="logo-icon">🔥</span> <strong>BlazeWear</strong> — All rights reserved
+    </div>
+    <div class="footer-center">
+      <nav class="footer-nav">
+        <a href="ClothingShop.html">Начало</a> ·
+        <a href="about.html">Относно</a> ·
+        <a href="shop.html">Магазин</a>
+      </nav>
+    </div>
+    <div class="footer-right">
+      <div class="contacts">
+        <div>contact@blazewear.example</div>
+        <div>+359 88 000 0000</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/payment.js"></script>
+
+<script>
+  // динамична цена по размер + цвят
+  document.addEventListener('DOMContentLoaded', function () {
+    const article = document.querySelector('.product-detail');
+    if (!article) return;
+
+    const base = parseFloat(article.dataset.priceBase || '0') || 0;
+    const priceSpan = document.querySelector('.detail-price-value');
+    const sizeBtns = document.querySelectorAll('.size-btn');
+    const colorBtns = document.querySelectorAll('.color-btn');
+
+    function updatePrice() {
+      const active = document.querySelector('.size-btn.active');
+      const mod = active ? Number(active.dataset.mod || 0) : 0;
+      const final = (base + mod).toFixed(2);
+      priceSpan.textContent = final;
+      article.setAttribute('data-price', final); // важно за cart.js
+    }
+
+    sizeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updatePrice();
+      });
+    });
+
+    colorBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        colorBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    updatePrice();
+  });
+</script>
+</body>
+</html>
