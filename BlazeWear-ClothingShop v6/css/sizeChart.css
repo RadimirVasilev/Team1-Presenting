@@ -1,0 +1,94 @@
+/* SIZE CHART MODAL – центриран popup */
+
+.size-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 3000;
+}
+
+.size-modal[aria-hidden="false"] {
+  display: block;
+}
+
+.size-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+/* панелът в средата на екрана — УВЕЛИЧЕН */
+.size-modal-panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 820px;                     /* ↑ от 640px */
+  max-width: calc(100% - 60px);
+  background: rgba(10, 0, 20, 0.96);
+  border-radius: 18px;               /* по-голям radius */
+  padding: 32px;                     /* ↑ от 22px */
+  color: #fff;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.75);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.size-modal-panel h3 {
+  margin-top: 0;
+  font-size: 22px;                   /* ↑ от 18px */
+  color: var(--fire-3);
+}
+
+.size-modal-close {
+  position: absolute;
+  right: 16px;                       /* ↑ */
+  top: 14px;                         /* ↑ */
+  background: transparent;
+  border: none;
+  font-size: 30px;                   /* ↑ от 24px */
+  cursor: pointer;
+  color: #fff;
+}
+
+/* таблици — увеличени клетки */
+
+.size-chart table {
+  width: 100%;
+  margin-top: 22px;
+  border-collapse: collapse;
+}
+
+.size-chart th,
+.size-chart td {
+  padding: 14px 16px;                /* ↑ от 10px 12px */
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 16px;                   /* ↑ от 14px */
+}
+
+.size-chart th {
+  background: rgba(255,79,138,0.15);
+  color: var(--fire-3);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* показваме само активната таблица */
+.size-chart {
+  display: none;
+}
+
+.size-chart.active {
+  display: block;
+}
+
+/* responsive */
+@media (max-width: 820px) {
+  .size-modal-panel {
+    width: calc(100% - 40px);
+    padding: 26px;
+  }
+  .size-chart th,
+  .size-chart td {
+    font-size: 15px;
+  }
+}

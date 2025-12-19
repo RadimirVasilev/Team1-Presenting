@@ -1,0 +1,274 @@
+/* main.css — начална страница (home), топло тъмно-оранжево */
+
+/* По-светъл, оранжев вариант на глобалните цветове само за home */
+:root{
+  --bg-dark-1: #321103;
+  --bg-dark-2: #6a2a06;
+  --fire-1:   #ff8a1f;
+  --fire-2:   #ff3c1f;
+  --fire-3:   #ffe59a;
+  --muted:    #f5d1aa;
+}
+
+/* старият hero-glow няма да се ползва, но го оставяме за всеки случай */
+.hero-glow{
+  background:
+    radial-gradient(closest-side, rgba(255,138,0,0.30), rgba(255,220,80,0.18) 40%, transparent 60%),
+    radial-gradient(closest-side, rgba(255,90,0,0.18), transparent 50%);
+  right:5%;
+  bottom:10%;
+  width:260px; height:260px;
+  filter: blur(36px) saturate(120%);
+}
+
+/* бутоните спазват глобалните цветове */
+.btn-primary{
+  background:linear-gradient(90deg,var(--fire-1),var(--fire-2));
+  color:var(--bg-dark-1);
+}
+.feature-icon{
+  background: linear-gradient(90deg,var(--fire-1),var(--fire-3));
+}
+
+/* ===========================
+   HOME LAYOUT (Answear-style)
+   =========================== */
+
+.home-main{
+  padding-top: calc(var(--header-height) + 28px);
+  padding-bottom: 72px;
+}
+
+/* Контейнерите на home да са по-широки */
+.home-banners.container,
+.home-products.container{
+  width:96%;
+  max-width:1400px;
+}
+
+/* ====================
+   ГОРНИТЕ ДВА БАНЕРА
+   ==================== */
+
+.home-banners{
+  display:grid;
+  grid-template-columns: minmax(0,1.4fr) minmax(0,1.4fr);
+  gap:24px;
+  margin-bottom:40px;
+}
+
+.home-banner{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  text-decoration:none;
+  border-radius:20px;
+  overflow:hidden;
+  padding:30px 32px;
+  min-height:230px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,170,60,0.32), transparent 60%),
+    linear-gradient(135deg, rgba(22,6,0,0.96), rgba(18,5,0,0.9));
+  box-shadow: 0 22px 52px rgba(0,0,0,0.65);
+  border:1px solid rgba(255,255,255,0.06);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.home-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255,120,0,0.25), transparent 60%);
+  opacity:0.9;
+  mix-blend-mode: screen;
+}
+
+.home-banner-inner{
+  position:relative;
+  z-index:1;
+}
+
+.home-banner-kicker{
+  margin:0 0 6px 0;
+  font-size:13px;
+  letter-spacing:0.10em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.home-banner-title{
+  margin:0 0 10px 0;
+  font-size:28px;
+  font-weight:800;
+  text-shadow:0 4px 18px rgba(0,0,0,0.6);
+}
+
+.home-banner-link{
+  font-size:14px;
+  font-weight:700;
+  color:var(--fire-3);
+}
+
+.home-banner:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.78);
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* ====================
+   ПРОДУКТОВ БЛОК (home)
+   ==================== */
+
+.home-products{
+  margin-top:20px;
+}
+
+.home-products-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.home-products-header h2{
+  margin:0;
+  font-size:22px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+}
+
+.home-products-all{
+  font-size:14px;
+  color:var(--fire-3);
+  text-decoration:none;
+  font-weight:700;
+}
+.home-products-all:hover{
+  text-decoration:underline;
+}
+
+.home-product-grid{
+  max-width:1600px;
+  margin:0 auto;
+  padding:0 4px;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:24px;
+}
+
+/* карта на продукт */
+.home-product-card{
+  position: relative;
+  border-radius:18px;
+  overflow:hidden;
+  background: linear-gradient(180deg, rgba(25,5,0,0.90), rgba(15,4,0,0.86));
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 18px 40px rgba(0,0,0,0.65);
+  display:flex;
+  flex-direction:column;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.home-product-card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 26px 70px rgba(0,0,0,0.9);
+  border-color: rgba(255,180,90,0.9);
+}
+
+/* --------------  
+   🔥 НОВИЯТ БЛОК  
+   -------------- */
+
+/* снимка / placeholder – 3:4, пълно запълване */
+.home-product-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+/* placeholder */
+.home-product-thumb .placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px 18px 0 0;
+  border: 2px dashed rgba(255,255,255,0.10);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,170,60,0.30), transparent 60%),
+    rgba(10,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 15px;
+}
+
+/* реална снимка – пълно запълване */
+.home-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px 18px 0 0;
+  transition: transform .35s ease;
+}
+
+/* hover zoom */
+.home-product-card:hover .home-product-thumb img {
+  transform: scale(1.05);
+}
+
+/* текст под снимката */
+.home-product-meta{
+  padding:12px 14px 16px;
+}
+
+.home-product-name{
+  margin:0 0 6px 0;
+  font-size:14px;
+  font-weight:700;
+}
+
+.home-product-price{
+  font-weight:800;
+  color:var(--fire-1);
+}
+
+/* responsive */
+@media (max-width:1100px){
+  .home-product-grid{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+  }
+}
+
+@media (max-width:980px){
+  .home-banners{
+    grid-template-columns: 1fr;
+  }
+  .home-banner{
+    min-height:210px;
+  }
+  .home-product-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width:520px){
+  .home-main{
+    padding-top: calc(var(--header-height) + 20px);
+  }
+  .home-banner{
+    padding:22px 20px;
+  }
+  .home-product-grid{
+    grid-template-columns:1fr;
+  }
+}

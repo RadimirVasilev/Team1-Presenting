@@ -1,0 +1,422 @@
+:root{
+  /* базови (по-общи) променливи — могат да се override-ват от page css */
+  --bg-dark-1: #1a0500;
+  --bg-dark-2: rgb(56, 15, 0);
+  --fire-1: hsl(25, 100%, 50%);
+  --fire-2: #ff1e00;
+  --fire-3: #ffd72a;
+  --muted: #d3c6b8;
+  --glass: rgba(255,255,255,0.03);
+  --container-max:1100px;
+  --header-height:72px;
+  --font-stack: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+/* RESET / базови */
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; padding:0; }
+body{
+  font-family: var(--font-stack);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+
+  /* анимиран градиент (покрива целия фон) */
+  background: linear-gradient(120deg, var(--bg-dark-1), var(--bg-dark-2) 45%, #120621 80%, var(--fire-1));
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* по желание – стои като „залепен“ фон */
+  animation: bgShift 14s ease-in-out infinite;
+}
+
+/* animated background */
+@keyframes bgShift{
+  0%{ background-position:0% 50% }
+  50%{ background-position:100% 50% }
+  100%{ background-position:0% 50% }
+}
+
+/* контейнер */
+.container{ width:90%; max-width:var(--container-max); margin:0 auto; }
+
+/* HEADER: лого вляво, меню в центъра, икони вдясно */
+.site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  height:var(--header-height);
+  z-index:1000;
+  background: linear-gradient(90deg, rgba(43,0,0,0.92), rgba(68,0,0,0.92));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.45);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+/* header-inner вече е full-width (няма container в HTML) */
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:100%;
+  padding:0 24px;
+  gap:12px;
+  max-width:100%;
+  margin:0;
+}
+
+.header-left { display:flex; align-items:center; gap:12px; }
+.brand{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--fire-3); font-weight:800; }
+.logo-img{ width:40px; height:40px; object-fit:cover; border-radius:6px; }
+.logo-text{ font-size:18px; color:var(--fire-3); }
+
+.header-center{ flex:1; display:flex; justify-content:center; }
+.nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:28px; align-items:center; }
+.nav ul li{ position:relative; }
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 10px;
+  transition: transform .18s ease, color .18s ease;
+  position:relative;            /* за underline-а */
+}
+.nav a:hover{ transform:translateY(-4px); color:#fffbda; }
+.nav a.active { color:#fff6d8; }
+
+/* underline според ширината на текста */
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;                     /* ширината става 100% от линка */
+  bottom:-6px;
+  height:3px;
+  border-radius:999px;
+  background: linear-gradient(90deg,var(--fire-1),var(--fire-2));
+  transform:scaleX(0);
+  transform-origin:center;
+  transition: transform .26s ease;
+}
+.nav a:hover::after,
+.nav a.active::after{
+  transform:scaleX(1);         /* линията се появява по цялата ширина на думата */
+}
+
+.has-dropdown { position: relative; }
+.has-dropdown > .dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  z-index: 1200;
+  pointer-events: none;
+  transition: all .26s ease;
+}
+.has-dropdown:hover > .dropdown {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.has-dropdown > .dropdown li { list-style: none; }
+.has-dropdown > .dropdown li a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Дясно: икони */
+.header-right{ display:flex; gap:10px; align-items:center; }
+.icon-btn{
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:18px;
+  padding:8px;
+  cursor:pointer;
+  border-radius:8px;
+  transition: background .2s;
+}
+.icon-btn:hover{ background: rgba(255,255,255,0.1); }
+
+/* SIDEBAR */
+.side-menu{
+  width:220px;
+  position:fixed;
+  top:var(--header-height);
+  left:0;
+  height:calc(100vh - var(--header-height));
+  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.55));
+  backdrop-filter: blur(10px);
+  padding:20px;
+  border-right:1px solid rgba(255,255,255,0.02);
+  z-index:900;
+  overflow:auto;
+}
+.side-menu h3{ margin:0 0 14px 0; font-size:18px; color:var(--fire-3); }
+.side-menu ul { list-style: none; padding: 0; margin: 0; }
+.side-menu a{
+  color:#e6e6e6;
+  text-decoration:none;
+  display:block;
+  padding:8px 12px;
+  transition: all .18s;
+  border-radius: 6px;
+}
+.side-menu a:hover{
+  color:var(--fire-1);
+  background: rgba(255,106,0,0.1);
+  padding-left:16px;
+}
+
+/* MAIN CONTENT */
+.content {
+  margin-left: 250px;
+  padding: calc(var(--header-height) + 28px) 30px 80px 30px;
+}
+
+/* --- Hover support & gap fix (desktop) --- */
+.nav .has-dropdown:hover > .dropdown,
+.nav .has-dropdown:focus-within > .dropdown {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* да не подскача линкът при hover */
+.nav .has-dropdown > a:hover {
+  transform: none;
+}
+
+/* Ensure dropdown sits above header/content */
+.nav .has-dropdown { z-index: 1300; }
+
+/* =========================
+   ДВУРЕДОВО HEADER МЕНЮ
+   (Answear-style, Blaze colors)
+   ========================= */
+
+/* Тук добавяме „пилюла“ фон за навигацията */
+.nav-shell{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:6px 24px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.35);
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+/* малко по-голямо разстояние между самите линкове */
+.nav-primary ul{
+  gap:28px;
+}
+.nav-secondary ul{
+  gap:30px;
+}
+
+/* горен ред: Мъже / Жени / Деца / Начало */
+.nav-primary a{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+  opacity:0.85;
+}
+.nav-primary a.active{
+  opacity:1;
+}
+
+/* долен ред: категории + mega-dropdown */
+.nav-secondary a{
+  font-size:14px;
+}
+
+/* разпродажба в по-огнен цвят */
+.nav-secondary .nav-sale{
+  color:var(--fire-3);
+}
+
+/* mega dropdown панел */
+.has-mega{
+  position:relative;
+  z-index:1300;
+}
+
+.has-mega .mega-menu{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  top:100%;
+  min-width:560px;
+  padding:20px 26px;
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,106,0,0.18), transparent 55%),
+    rgba(5,0,0,0.96);
+  box-shadow:0 18px 40px rgba(0,0,0,0.7);
+  border:1px solid rgba(255,255,255,0.06);
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:26px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease;
+}
+
+/* показване на панела при hover и за touch (клас .open идва от script.js) */
+.has-mega:hover > .mega-menu,
+.has-mega.open > .mega-menu{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+
+.mega-menu .mega-col h4{
+  margin:0 0 8px 0;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+  color:var(--fire-3);
+}
+
+.mega-menu .mega-col a{
+  display:block;
+  font-size:13px;
+  padding:3px 0;
+  color:#f5f5f5;
+  text-decoration:none;
+  opacity:0.9;
+}
+.mega-menu .mega-col a:hover{
+  color:var(--fire-1);
+}
+
+/* малка корекция, за да не подскача линка при hover */
+.nav .has-dropdown > a:hover{
+  transform:none;
+}
+
+/* responsive: allow wrap for very narrow screens */
+@media (max-width:520px){
+  .has-dropdown > .dropdown { white-space: normal; left: 0; transform: none; position: static; opacity:1; pointer-events:auto; display:none; }
+  .has-dropdown.open > .dropdown{ display:block; }
+  .has-dropdown > .dropdown li a { text-align:left; }
+}
+
+/* HERO — общи */
+.hero{
+  padding-top: calc(var(--header-height) + 36px);
+  padding-bottom:80px;
+  min-height:540px;
+  position:relative;
+}
+.hero-inner{ max-width:760px; margin-left:30px; }
+.badge{ display:inline-block; font-size:12px; padding:8px 14px; border-radius:999px; background:linear-gradient(90deg,var(--fire-1),var(--fire-2)); color:#110500; font-weight:800; margin-bottom:14px; }
+.hero-title{ font-size:64px; margin:6px 0; font-weight:800; text-transform:uppercase; text-shadow: 0 6px 28px rgba(0,0,0,0.35); }
+.hero-title span{ display:block; color:var(--fire-3); font-size:78px; }
+.hero-sub{ color:var(--muted); margin:18px 0 26px; font-size:15px; }
+.hero-cta{ display:flex; gap:12px; align-items:center; }
+
+/* бутоните */
+.btn{ display:inline-flex; align-items:center; gap:8px; border:0; padding:12px 18px; border-radius:999px; font-weight:700; cursor:pointer; text-decoration:none; }
+.btn-primary{ background:linear-gradient(90deg,var(--fire-1),var(--fire-2)); color:var(--bg-dark-1); }
+.btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; }
+
+/* glow (general placeholder) */
+.hero-glow{
+  position:absolute;
+  right:5%; bottom:10%;
+  width:260px; height:260px;
+  pointer-events:none;
+  filter: blur(36px) saturate(120%);
+  mix-blend-mode: screen;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse{
+  0% { transform: scale(.96); opacity:.86; }
+  50% { transform: scale(1.06); opacity:1; }
+  100% { transform: scale(.96); opacity:.86; }
+}
+
+/* FEATURES */
+.features{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:40px; padding:40px 0 80px; }
+.feature{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05)); border-radius:14px; padding:22px; font-weight:700; border:2px solid rgba(0,0,0,0.12); }
+.feature h3{ font-weight:800; font-size:18px; margin-bottom:8px; }
+.feature p{ color:#eaeaea; font-weight:600; }
+.feature-icon{ width:56px; height:56px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background: linear-gradient(90deg,var(--fire-1),var(--fire-3)); color:#1a0500; margin-bottom:12px; }
+
+/* FOOTER */
+.site-footer{ padding:28px 0; background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent); margin-top:40px; }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 18px; }
+.footer-left{ color:var(--muted); font-size:14px; }
+.footer-center a, .footer-nav-right a{ color:var(--muted); text-decoration:none; margin-right:14px; font-weight:600; }
+.footer-center{ text-align:center; }
+
+/* featured / products placeholders (shared) */
+.placeholder{ width:100%; height:320px; background: rgba(0,0,0,0.45); border: 2px dashed rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px; padding:12px; border-radius:8px; }
+.placeholder.large{ height:420px; }
+.product-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:24px; margin-top:20px; }
+.product .placeholder{ height:220px; }
+.price{ margin-top:10px; font-weight:800; color:var(--fire-1); }
+
+/* sidebar */
+.side-menu{ width:220px; position:fixed; top:var(--header-height); left:0; height:calc(100vh - var(--header-height)); background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.55)); padding:20px; border-right:1px solid rgba(255,255,255,0.02); z-index:900; overflow:auto; }
+.side-menu h3{ margin:0 0 14px 0; font-size:18px; color:var(--fire-3); }
+.side-menu a{ color:#e6e6e6; text-decoration:none; display:block; padding:6px 2px; transition: all .18s; }
+.side-menu a:hover{ color:var(--fire-1); padding-left:6px; }
+
+/* responsive */
+@media (max-width:980px){
+  .features{ grid-template-columns:1fr; padding:24px 0; }
+  .product-grid{ grid-template-columns: repeat(2, 1fr); }
+  .side-menu{ position:static; width:100%; height:auto; padding:12px; border-right:none; }
+  .content{ margin-left:0; padding: calc(var(--header-height) + 12px) 18px 40px 18px; }
+}
+@media (max-width:520px){
+  .product-grid{ grid-template-columns: 1fr; gap:18px; }
+  .placeholder.large{ height:240px; }
+  .nav ul{ gap:12px; overflow:auto; -webkit-overflow-scrolling:touch; }
+  .header-center{ display:block; position:static; transform:none; margin-left:12px; }
+}
+.header__menu__item > a:hover,
+.header__menu__item > a:focus {
+  text-decoration: none !important;
+}
+/* =========================
+   CART BADGE (global)
+   ========================= */
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4f8a;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(255, 79, 138, 0.5);
+}
+
